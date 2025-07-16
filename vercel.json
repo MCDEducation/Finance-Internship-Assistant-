@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/openapi/tool-finder",
+      "destination": "/openapi/tool-finder.json"
+    },
+    {
+      "source": "/openapi/resource-finder",
+      "destination": "/openapi/resource-finder.json"
+    }
+  ]
+}
