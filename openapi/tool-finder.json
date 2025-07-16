@@ -1,0 +1,49 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Tool Finder API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/tool-finder": {
+      "get": {
+        "operationId": "getTool",
+        "summary": "Find tools based on application stage and user type",
+        "parameters": [
+          {
+            "name": "stage",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "targetUser",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of tools",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": { "type": "string" },
+                      "description": { "type": "string" },
+                      "affiliateLink": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
